@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ParkingZone {
     List <Spot> spotList;
-    List <Cash> cash;
+    List <Statistic> statistics;
 
     public List<Spot> getSpotList() {
         return spotList;

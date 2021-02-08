@@ -6,11 +6,11 @@ public class Main {
     static ArrayList <Car> cars;
     static LocalDateTime start;
     static LocalDateTime changing;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoEmptySpotAvailable {
         startMonthPark();
     }
 
-    private static void startMonthPark() {
+    private static void startMonthPark() throws NoEmptySpotAvailable {
         createCars();
         ParkingZone parkingZone = new ParkingZone();
         start = LocalDateTime.now();

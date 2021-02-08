@@ -1,4 +1,6 @@
 import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class TimeParking {
     private LocalDateTime timeIn;
@@ -18,6 +20,11 @@ public class TimeParking {
 
     public void setTimeOut(LocalDateTime timeOut) {
         this.timeOut = timeOut;
+    }
+
+    public int getTimeDifference(){
+        int minutes = (int) ChronoUnit.MINUTES.between(timeIn, timeOut);
+        return minutes;
     }
 }
 
