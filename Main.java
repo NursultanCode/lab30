@@ -49,6 +49,7 @@ public class Main {
             changing = changing.plusMinutes(5);
         }
         System.out.println(parkingZone.getStatistics().toString());
+        DrawingTable.draw(parkingZone.getStatistics());
     }
 
     private static int countLoad(ParkingZone parkingZone) {
