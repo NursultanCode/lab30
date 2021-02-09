@@ -31,6 +31,11 @@ public class Main {
                     changeState(car,parkingZone);
                 }
             }
+            if (parkingZone.getStatistics().getLast().getLoad()==0){
+                parkingZone.getStatistics().getLast().setLoad(countLoad(parkingZone));
+            }else {
+                parkingZone.getStatistics().getLast().setLoad((parkingZone.getStatistics().getLast().getLoad()+countLoad(parkingZone))/2);
+            }
             for (Spot spot: parkingZone.spotList
                  ) {
                 if (changing.getHour()>9 && changing.getHour()<21){
@@ -69,7 +74,7 @@ public class Main {
 
     private static void createCars() {
         cars = new ArrayList<>();
-        for (int i = 0; i <100 ; i++) {
+        for (int i = 0; i <200 ; i++) {
             Car car = new Car(i);
             cars.add(car);
         }
