@@ -54,7 +54,7 @@ public class ParkingZone {
             emptySpot.assignCar(car, time);
             System.out.println("Car located");
         } catch (NoEmptySpotAvailable noEmptySpotAvailable) {
-
+            
         }
 
     }

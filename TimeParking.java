@@ -33,5 +33,10 @@ public class TimeParking {
         int minutes = (int) ChronoUnit.MINUTES.between(timeIn, timeOut);
         return minutes;
     }
+
+    public int getTimeDifference(LocalDateTime changing) {
+        int minutes = (int) ChronoUnit.MINUTES.between(timeIn, changing);
+        return minutes;
+    }
 }
 

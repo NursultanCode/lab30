@@ -31,6 +31,14 @@ public class Main {
                     changeState(car,parkingZone);
                 }
             }
+            for (Spot spot: parkingZone.spotList
+                 ) {
+                if (changing.getHour()>9 && changing.getHour()<21){
+                    if (spot!=null && spot.getTimeParking()!=null && spot.getTimeParking().getTimeDifference(changing)>35){
+                        parkingZone.getStatistics().getLast().setCash(parkingZone.getStatistics().getLast().getCash()+10);
+                    }
+                }
+            }
             System.out.println(changing);
             parkingZone.printStatus();
             changing = changing.plusMinutes(5);
