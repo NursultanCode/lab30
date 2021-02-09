@@ -6,6 +6,14 @@ public class Spot {
     private Car car;
     private TimeParking timeParking;
 
+    public TimeParking getTimeParking() {
+        return timeParking;
+    }
+
+    public void setTimeParking(TimeParking timeParking) {
+        this.timeParking = timeParking;
+    }
+
     public Car getCar() {
         return car;
     }
@@ -38,18 +46,25 @@ public class Spot {
     public  void assignCar(Car car, LocalDateTime timeIn){
         free = false;
         this.car = car;
+        timeParking = new TimeParking();
         timeParking.setTimeIn(timeIn);
         car.setState(State.InPark);
     }
 
-//    public int getCheck(LocalDateTime timeOut){
-//        timeParking.setTimeOut(timeOut);
-//
-//    }
 
     public void removeCar(){
         car.setState(State.OnRoad);
         free = true;
         car = null;
+    }
+
+    @Override
+    public String toString() {
+        return "\nSpot{" +
+                "id=" + id +
+                ", free=" + free +
+                ", car=" + car +
+                ", timeParking=" + timeParking +
+                '}';
     }
 }

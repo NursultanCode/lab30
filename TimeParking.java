@@ -1,5 +1,4 @@
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 public class TimeParking {
@@ -8,6 +7,14 @@ public class TimeParking {
 
     public LocalDateTime getTimeIn() {
         return timeIn;
+    }
+
+    @Override
+    public String toString() {
+        return "TimeParking{" +
+                "timeIn=" + timeIn +
+                ", timeOut=" + timeOut +
+                '}';
     }
 
     public void setTimeIn(LocalDateTime timeIn) {
